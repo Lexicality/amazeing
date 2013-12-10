@@ -1,10 +1,14 @@
+@mainHeight: 300px;
+@mainWidth: 1200px;
+@tileSize: 200px;
+
 .wall {
 	display: block;
 	position: absolute;
-	top: 150px;
-	left: 150px;
-	width: 200px;
-	height: 200px;
+	top: ((@mainHeight - @tileSize) / 2);
+	left: ((@mainWidth - @tileSize) / 2);
+	width: @tileSize;
+	height: @tileSize;
 	background: url(../img/Seamless_Brick_Wall_Texture_by_cfrevoir.jpg);
 	// transform: rotateY(90deg) translateZ(50px);
 
@@ -26,12 +30,12 @@
 }
 #maze {
 	position: relative;
-	height: 500px;
-	width: 500px;
+	height: @mainHeight;
+	width: @mainWidth;
 	perspective: 250px;
 	transform-style: preserve-3d;
 	background: gray;
-	margin: 75px 0 0 75px;
+	// margin: 75px 0 0 75px;
 	* {
 		transform-style: preserve-3d;
 	}
@@ -40,3 +44,7 @@
 	}
 }
 
+body, html {
+	margin: 0;
+	padding: 0;
+}
