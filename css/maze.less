@@ -1,6 +1,7 @@
 @mainHeight: 300px;
 @mainWidth: 1200px;
 @tileSize: 200px;
+@ts2: @tileSize / 2;
 
 .wall {
 	display: block;
@@ -13,20 +14,20 @@
 	// transform: rotateY(90deg) translateZ(50px);
 
 	border: none;
-	line-height: 100px;
+	line-height: @tileSize;
 	font-family: arial, sans-serif;
-	font-size: 60px;
+	font-size: @tileSize/4;
 	color: white;
 	text-align: center;
 }
 .wall:nth-child(1) {
-	transform: translateX(-100px) translateZ(-100px) rotateY(90deg);
+	transform: translateX(-@ts2) translateZ(-@ts2) rotateY(90deg);
 }
 .wall:nth-child(2) {
-	transform: translateX(100px) translateZ(-100px) rotateY(-90deg);
+	transform: translateX(@ts2) translateZ(-@ts2) rotateY(-90deg);
 }
 .wall:nth-child(3) {
-	transform: translateX(200px);
+	transform: translateX(@ts2*2);
 }
 #maze {
 	position: relative;
@@ -34,7 +35,7 @@
 	width: @mainWidth;
 	perspective: 250px;
 	transform-style: preserve-3d;
-	background: gray;
+	background: rgba(100,100,100,0.5);
 	// margin: 75px 0 0 75px;
 	* {
 		transform-style: preserve-3d;
