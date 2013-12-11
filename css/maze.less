@@ -29,6 +29,18 @@
 .wall:nth-child(3) {
 	transform: translateX(@ts2*2);
 }
+.wall:nth-child(4) {
+	transform: translateX(-@ts2) translateZ(-@ts2 * 3) rotateY(90deg);
+}
+.wall:nth-child(5) {
+	transform: translateX(-@ts2*2);
+}
+.wall:nth-child(6) {
+	transform: translateZ(-@ts2 * 4);
+}
+.wall:nth-child(7) {
+	transform: translateZ(-@ts2 * 4) translateX(@ts2*2);
+}
 #maze {
 	position: relative;
 	height: @mainHeight;
@@ -41,6 +53,7 @@
 		transform-style: preserve-3d;
 	}
 	> article {
+		transition: transform 2s;
 		// transform: rotateX(20deg);
 	}
 }
