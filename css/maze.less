@@ -46,9 +46,12 @@
 }
 */
 #geometry {
+	@persp: 0deg;
+	@rotate: 0deg;
+
 	// @persp: 90deg
 	@persp: 45deg;
-	@rotate: 45deg; // 0deg
+	@rotate: 45deg;
 	transform: rotateX(@persp) rotateZ(@rotate);
 }
 #camera, #geometry {
