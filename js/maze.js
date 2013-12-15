@@ -57,7 +57,7 @@
 		},
 		rebuildCSS: function()
 		{
-			var arr = [];
+			var arr = ['translateZ(' + -tilesize / 2 + 'px)'];
 				arr.push( 'translateX(' + this._stepAdjust( this._translateX ) * tilesize + 'px)' );
 				arr.push( 'translateY(' + this._stepAdjust( this._translateY, true ) * tilesize + 'px)' );
 			if ( this._rotate )
