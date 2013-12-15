@@ -65,28 +65,39 @@
 			arr.push('rotateY(90deg)');
 			arr.push('rotateZ(-90deg)');
 			this.$el.css('transform', arr.join(' ') );
-			this.$el.text( this._translateX + ',' + this._translateY + ',' + (this._rotate ? '1' : '0'));
+			this.$el.text( this._translateX + 'x' + this._translateY + ',' + (this._rotate ? '1' : '0'));
 		}
 	} );
 	function w(x,y,z) {
 		return new Wall(x,y,z);
 	}
-	// Square
-	// w(2,0,1);
-	// w(1,0,1);
-	// w(-1,0,1);
-	// w(-2,0,1);
-	// w(0,-1,0);
-	// w(0,1,0);
 
 	// Torus
-	w(0,0,0);
-	w(0,0,1);
-	w(0,1,0);
-	w(0,1,1);
-	w(1,0,1);
-	w(1,0,0);
-	// w(1,2,1);
-	// w(1,1,0);
+	// Core
+	w( 0, 0,1);
+	w( 0, 0,0);
+	w( 0, 1,1);
+	w( 1, 0,0);
+
+	// Wall 1
+	w(-1, 0,0);
+	w(-1, 1,0);
+	w(-1,-1,0);
+
+	// Wall 2
+	w(-1, 2,1);
+	w( 0, 2,1);
+	w( 1, 2,1);
+
+	// Wall 3
+	w( 2, 0,0);
+	w( 2, 1,0);
+	w( 2,-1,0);
+
+	// Wall 4
+	w(-1,-1,1);
+	w( 0,-1,1);
+	w( 1,-1,1);
+
 })(jQuery, _);
 
