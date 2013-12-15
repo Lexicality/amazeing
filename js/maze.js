@@ -37,10 +37,10 @@
 					amt += 1;
 				amt -= 0.5;
 			}
-			if ( steps >= 0 )
+			// if ( steps >= 0 )
 				steps -= amt;
-			else
-				steps += amt;
+			// else
+				// steps += amt;
 			return steps;
 		},
 		translateX: function(steps) {
