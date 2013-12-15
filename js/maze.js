@@ -27,11 +27,17 @@
 		{
 			// return steps;
 			var amt = 0;
+			// amt -= 0.5;
 			if ( isY )
-				amt += 0.5
-			if (this._rotate)
-				amt += 0.5;
-			if ( steps > 0 )
+				amt -= 0.5
+			// if ( ! isY )
+				// amt += 0.5
+			if (this._rotate) {
+				if ( isY )
+					amt += 1;
+				amt -= 0.5;
+			}
+			if ( steps >= 0 )
 				steps -= amt;
 			else
 				steps += amt;
@@ -52,9 +58,7 @@
 		rebuildCSS: function()
 		{
 			var arr = [];
-			if ( this._translateX )
 				arr.push( 'translateX(' + this._stepAdjust( this._translateX ) * tilesize + 'px)' );
-			if ( this._translateY )
 				arr.push( 'translateY(' + this._stepAdjust( this._translateY, true ) * tilesize + 'px)' );
 			if ( this._rotate )
 				arr.push( 'rotateZ(90deg)' );
@@ -67,26 +71,22 @@
 	function w(x,y,z) {
 		return new Wall(x,y,z);
 	}
-	// w(0,0,0);
-	// w(0,0,1);
-	w(2,0,1);
-	w(1,0,1);
-	w(-1,0,1);
-	w(-2,0,1);
-	w(0,-1,0);
+	// Square
+	// w(2,0,1);
+	// w(1,0,1);
+	// w(-1,0,1);
+	// w(-2,0,1);
+	// w(0,-1,0);
+	// w(0,1,0);
+
+	// Torus
+	w(0,0,0);
+	w(0,0,1);
 	w(0,1,0);
-	// w( 1, 0,0);
-	// w( 1,-1,0);
-	// w( 1, 1,0);
-	// w( 2, 0,0);
-	// w( 2, 1,0);
-	// w( 2,-1,0);
-	// w( 2,-2,0);
-	// w( 2,-2,1);
-	// w(-1, 0,0);
-	// w(-2, 0,0);
-	// w( 0, 1,1);
-	// w( 0,-1,1);
-	// w( 1,-1,1);
+	w(0,1,1);
+	w(1,0,1);
+	w(1,0,0);
+	// w(1,2,1);
+	// w(1,1,0);
 })(jQuery, _);
 
