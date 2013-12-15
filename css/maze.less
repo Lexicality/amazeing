@@ -49,10 +49,13 @@
 	@persp: 0deg;
 	@rotate: 0deg;
 
-	// @persp: 90deg
-	@persp: 45deg;
-	@rotate: 45deg;
+	// @persp: 90deg;
+	// @persp: 45deg;
+	// @rotate: 45deg;
 	transform: rotateX(@persp) rotateZ(@rotate);
+}
+#camera {
+	transform: translateX(-100px) translateY(-100px);
 }
 #camera, #geometry {
 	transition: transform 2s;
