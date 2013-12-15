@@ -61,7 +61,7 @@
 			arr.push('rotateY(90deg)');
 			arr.push('rotateZ(-90deg)');
 			this.$el.css('transform', arr.join(' ') );
-			this.$el.text( this._translateX + ',' + this._translateY + ',' + (this._rotate ? 'R' : ' '));
+			this.$el.text( this._translateX + ',' + this._translateY + ',' + (this._rotate ? '1' : '0'));
 		}
 	} );
 	function w(x,y,z) {
