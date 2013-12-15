@@ -1,4 +1,4 @@
-@mainHeight: 300px;
+@mainHeight: 700px;
 @mainWidth: 1200px;
 @tileSize: 200px;
 @ts2: @tileSize / 2;
@@ -11,7 +11,8 @@
 	width: @tileSize;
 	// width: 5px;
 	height: @tileSize;
-	background: url(../img/Seamless_Brick_Wall_Texture_by_cfrevoir.jpg);
+	// background: url(../img/Seamless_Brick_Wall_Texture_by_cfrevoir.jpg);
+	background: url(../img/dev_measurewall01a1.jpg);
 	// transform: rotateY(90deg) translateZ(50px);
 
 	border: none;
@@ -45,7 +46,10 @@
 }
 */
 #geometry {
-	transform: rotateX(90deg);
+	// @persp: 90deg
+	@persp: 45deg;
+	@rotate: 45deg; // 0deg
+	transform: rotateX(@persp) rotateZ(@rotate);
 }
 #camera, #geometry {
 	transition: transform 2s;
