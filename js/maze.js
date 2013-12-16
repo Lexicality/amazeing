@@ -7,7 +7,6 @@
 			'class':'wall',
 			'text': "wat" + i
 		});
-		console.log('e', e);
 		this.$el = e;
 		this.el = e[0];
 		$('#geometry').append(e);
