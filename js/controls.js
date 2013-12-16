@@ -80,4 +80,5 @@
 	}
 	divset('#geometry', "Geometry");
 	divset('#camera', "Camera");
+	$('#controls ol').sortable();
 })(jQuery,_);
