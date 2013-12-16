@@ -27,7 +27,7 @@
 				if ( this.value && this.checkValidity() )
 					callback( name, parseInt( this.value, 10 ) );
 			})
-		);
+		).data('name', name);
 	}
 	var def = [
 		'translateX',
@@ -76,9 +76,16 @@
 		_.forEach( transforms, function( value, name ) {
 			list.append( field( shortname, name, value, cback ) );
 		} );
+		list.sortable().on('sortupdate', function()
+		{
+			order = [];
+			list.children().each(function() {
+				order.push( $(this).data('name') );
+			});
+			rebuild();
+		});
 		rebuild();
 	}
 	divset('#geometry', "Geometry");
 	divset('#camera', "Camera");
-	$('#controls ol').sortable();
 })(jQuery,_);
