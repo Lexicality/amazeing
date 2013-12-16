@@ -25,22 +25,16 @@
 	_.extend( Wall.prototype, {
 		_stepAdjust: function(steps, isY)
 		{
-			// return steps;
 			var amt = 0;
 			// amt -= 0.5;
 			if ( isY )
-				amt -= 0.5
-			// if ( ! isY )
-				// amt += 0.5
+				amt -= 0.5;
 			if (this._rotate) {
 				if ( isY )
 					amt += 1;
 				amt -= 0.5;
 			}
-			// if ( steps >= 0 )
-				steps -= amt;
-			// else
-				// steps += amt;
+			steps -= amt;
 			return steps;
 		},
 		translateX: function(steps) {
