@@ -5,11 +5,6 @@
 	}
 	function field(g, name, value, callback)
 	{
-		var min, max;
-		if ( isRotate(name) ) {
-			min = -180;
-			max = 180;
-		}
 		return $('<li>').append(
 			$('<label>', {
 				text: name,
@@ -17,8 +12,6 @@
 			}),
 			$('<input>', {
 				type: 'number',
-				min: min,
-				max: max,
 				value: value,
 				name: g+name,
 				id: g+name
