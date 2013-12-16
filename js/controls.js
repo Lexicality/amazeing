@@ -44,12 +44,14 @@
 			transforms[a] = 0;
 		});
 		var order = def.concat();
+		var $el = $( selector );
 		function rebuild()
 		{
 			var res = order.filter(function(name){ return transforms[name]; }).map(function(name){
 				return name +'(' + transforms[name] + ( isRotate(name) ? 'deg' : 'px' ) + ')';
 			}).join(' ');
 			console.log(res);
+			$el.css('transform', res);
 		}
 		function cback( name, value )
 		{
@@ -58,7 +60,8 @@
 			rebuild();
 		}
 		var shortname = selector.substr(1,3);
-		// var $el = $( selector );
+		if ( shortname === "geo" ) // start the geo off facing forward
+			transforms.rotateX = 90;
 		var list;
 		$('#controls').append(
 			$('<fieldset>', {
@@ -70,14 +73,11 @@
 				( list = $('<ol>') )
 			)
 		);
-		def.forEach( function( name ) {
-			list.append( field( shortname, name, 0, cback ) );
+		_.forEach( transforms, function( value, name ) {
+			list.append( field( shortname, name, value, cback ) );
 		} );
+		rebuild();
 	}
 	divset('#geometry', "Geometry");
 	divset('#camera', "Camera");
-	// var f = new Field("translateX", -1000, 1000, 0, function(name, value) { console.log(name,value); });
-
-	// f.$el.appendTo('#geo');
-
 })(jQuery,_);
