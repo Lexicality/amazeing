@@ -9,11 +9,9 @@
 	top: ((@mainHeight - @tileSize) / 2);
 	left: ((@mainWidth - @tileSize) / 2);
 	width: @tileSize;
-	// width: 5px;
 	height: @tileSize;
 	// background: url(../img/Seamless_Brick_Wall_Texture_by_cfrevoir.jpg);
 	background: url(../img/dev_measurewall01a1.jpg);
-	// transform: rotateY(90deg) translateZ(50px);
 
 	border: none;
 	line-height: @tileSize;
@@ -22,29 +20,6 @@
 	color: white;
 	text-align: center;
 }
-/*
-.wall:nth-child(1) {
-	transform: translateX(-@ts2) translateZ(-@ts2) rotateY(90deg);
-}
-.wall:nth-child(2) {
-	transform: translateX(@ts2) translateZ(-@ts2) rotateY(-90deg);
-}
-.wall:nth-child(3) {
-	transform: translateX(@ts2*2);
-}
-.wall:nth-child(4) {
-	transform: translateX(-@ts2) translateZ(-@ts2 * 3) rotateY(90deg);
-}
-.wall:nth-child(5) {
-	transform: translateX(-@ts2*2);
-}
-.wall:nth-child(6) {
-	transform: translateZ(-@ts2 * 4);
-}
-.wall:nth-child(7) {
-	transform: translateZ(-@ts2 * 4) translateX(@ts2*2);
-}
-*/
 #geometry {
 	@persp: 0deg;
 	@rotate: 0deg;
@@ -69,7 +44,6 @@
 	perspective: 1000px;
 	transform-style: preserve-3d;
 	background: rgba(100,100,100,0.5);
-	// margin: 75px 0 0 75px;
 	* {
 		transform-style: preserve-3d;
 	}
