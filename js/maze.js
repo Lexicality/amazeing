@@ -26,7 +26,7 @@
 		_stepAdjust: function(steps, isY)
 		{
 			var amt = 0;
-			// amt -= 0.5;
+			amt += 0.5;
 			if ( isY )
 				amt -= 0.5;
 			if (this._rotate) {
